@@ -4,29 +4,32 @@ pipeline {
     stages {
         stage('BUILD') {
             steps {
-                echo 'BUILD New World'
-		bat date
+		    echo 'BUILD New World'
+		    bat 'date'
             }
         }
 	stage('TEST') {
-            steps {
-                echo 'TEST New World'
-            }
-        }
+		steps {
+			echo 'TEST New World'
+		}
+	}
+	
 	stage('QA') {
-            steps {
-                echo 'QA New World'
-            }
+		steps {
+			echo 'QA New World'
+		}
         }
 	stage('PROD-2') {
-            steps {
-                echo 'PROD-2 New World'
-            }
+		steps {
+			echo 'PROD-2 New World'
+                }
         }
 	stage('PROD') {
-            steps {
-                echo 'PROD New World'
-            }
+		steps {
+			echo 'PROD New World'
+		}
         }
+		    
+	
     }
 }
