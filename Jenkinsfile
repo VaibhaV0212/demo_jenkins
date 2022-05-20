@@ -5,7 +5,7 @@ pipeline {
         stage('BUILD') {
             steps {
 		    echo 'BUILD New World'
-		    bat 'date'
+		    
             }
         }
 	stage('TEST') {
@@ -29,7 +29,13 @@ pipeline {
 			echo 'PROD New World'
 		}
         }
-		    
+	post
+	    {
+		    always
+		    {
+			    emailext body: 'Good Work.', subject: 'Details Regarding current Jenkins Job', to: 'vaibhavtomar082@gmail.com'
+		    }
+  	    }
 	
     }
 }
